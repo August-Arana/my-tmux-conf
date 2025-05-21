@@ -10,7 +10,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     cpu_usage=$(echo "100 - $cpu_idle" | bc)
 elif [[ "$(uname)" == "Linux" ]]; then
     # Linux
-    cpu_idle=$(top -bn1 | grep "Cpu(s)" | awk '{print $8}' | sed 's/,//')
+    cpu_idle=$(LC_ALL=C top -bn1 | grep "Cpu(s)" | awk '{print $8}' | sed 's/,//')
     cpu_usage=$(echo "100 - $cpu_idle" | bc)
 else
     cpu_usage="?" # Fallback for other OS
