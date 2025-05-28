@@ -20,7 +20,7 @@ fi
 if (( $(echo "$cpu_usage > 70" | bc -l) )); then
     echo "#[fg=red]${cpu_usage}%"
 elif (( $(echo "$cpu_usage > 40" | bc -l) )); then
-    echo "#[fg=yellow]${cpu_usage}%"
+    echo "#[fg=DarkOrange]${cpu_usage}%"
 else
-    echo "#[fg=green]${cpu_usage}%"
+    echo "#[fg=black]${cpu_usage}%"
 fi
